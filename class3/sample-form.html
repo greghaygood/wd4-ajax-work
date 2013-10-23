@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Week 3 Homeworkd</title>
+
+	<style type="text/css">	
+		ol { list-style: none; }
+		li { margin-bottom: 10px;}
+		label { width: 200px; display: inline-block; text-align: right; margin: 0;}
+		input[type="text"] { margin-left: 10px; width: 200px; }
+		input.error { border: 1px solid #900; background-color: pink;}
+		button:first-child { margin-left: 215px; }
+		.output { margin-top: 20px; border: 1px solid #999; min-height: 100px; width: 500px; }
+	</style>
+
+
+</head>
+<body>
+
+<div class="wrapper">
+	<header>
+		<h1>Regex Tester</h1>
+	</header>
+	<form name="tester" onsubmit="return false;">
+		<ol>
+			<li>
+				<label for="regex">Enter a regular expression</label>
+				<input id="regex" type="text" placeholder="regex without the slashes">
+				<select>
+					<option value="">custom</option>
+					<option value="\w+@[\w\.]+\w">email</option>
+					<option value="\d+">digits</option>
+					<option value="...">phone number</option>
+				</select>
+			</li>
+			<li>
+				<label for="sample">Enter some sample text</label>
+				<input id="sample" type="text" placeholder="Lorem ipsum dolor">
+			</li>
+			<li>
+				<button>Test for any match</button>
+				<button>Test for exact match</button>
+			</li>
+			<li>
+				<label for="output">Output</label>
+				<input id="output" type="text" placeholder="">
+			</li>
+		</ol>
+	</form>
+	<button id="blow-up">DO NOT PRESS</button>
+	<button id="reset">RESET</button>
+</div>
+
+</body>
+</html>
