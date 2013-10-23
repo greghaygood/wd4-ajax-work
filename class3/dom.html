@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM testing</title>
+
+	<style type="text/css">	
+		footer { border-top: 1px solid gray; margin-top: 20px;}
+		ol { list-style: none; }
+		li { margin-bottom: 10px;}
+		label { width: 200px; display: inline-block; text-align: right; margin: 0;}
+		input[type="text"] { margin-left: 10px; width: 200px; }
+		button:first-child { margin-left: 215px; }
+		.output { margin-top: 20px; border: 1px solid #999; min-height: 100px; width: 500px; }
+	</style>
+</head>
+<body>
+
+<div class="wrapper">
+	<!-- header goes here -->
+	<header>
+		<h1>DOM Tester</h1>
+	</header>
+
+	<!-- nav goes here -->
+	<nav>
+		<ul>
+			<li>Home</li>
+			<li>About</li>
+			<li>Contact us</li>
+		</ul>
+	</nav>
+
+	<!-- main content goes here -->
+	<section id="home" class="main">
+		<article>
+		
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+		<blockquote>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit
+		</blockquote>
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+		<hr/>
+
+		<form>
+			<ol>
+				<li>
+					<label for="first">First name</label>
+					<input id="first" type="text" placeholder="Bob">
+				</li>
+				<li>
+					<label for="last">Last name</label>
+					<input id="last" type="text" placeholder="Smith">
+				</li>
+				<li>
+					<button>Save</button>
+				</li>
+			</ol>
+		</form>
+
+		</article>
+	</section>
+</div>
+
+<footer>
+	<p>&copy; 2013 Creative Circus
+</footer>
+</body>
+</html>
