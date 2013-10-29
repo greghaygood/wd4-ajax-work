@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test of jquery getJSON()</title>
+</head>
+<body>
+
+<div class="content">
+	Some intro text...
+</div>
+
+<a href="#" id="loader1">Load color data</a>
+
+<div id="result">
+	<ul id="colors">
+	</ul>
+</div>
+
+<script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+
+	$('#loader1').on('click', function() {
+		$.getJSON('colors.json', {}, function(json) {
+			console.log("data loaded...", json);
+
+			var colors = json.colorsArray;
+			var $container = $('#colors');
+			for (var i = 0; i < colors.length; i++) {
+				var colorPair = colors[i];
+				console.log(colorPair);
+				var $li = $('<li style="color: ' + colorPair.hexValue + '""></li>');
+				$li.append("<strong>" + colorPair.colorName + "</strong>: ");
+				$li.append("<em>" + colorPair.hexValue + "</em>");
+				console.log($li);
+				$container.append($li);
+			}
+		} );
+		return false;
+	});
+
+</script>
+
+</body>
+</html>
