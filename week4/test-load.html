@@ -23,10 +23,12 @@
 		$( "#result" ).load( "testdata1.html", function() {
 			console.log("data loaded...", arguments);
 		} );
+		return false;
 	});
 
 	$('#loader2').on('click', function() {
 		$( "#result" ).load( "testdata1.html .list-data" );
+		return false;
 	});
 
 </script>
