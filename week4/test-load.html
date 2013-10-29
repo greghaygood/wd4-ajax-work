@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test of jquery load()</title>
+</head>
+<body>
+
+<div class="content">
+	Some intro text...
+</div>
+
+<a href="#" id="loader1">Load all data</a> |
+<a href="#" id="loader2">Load list only</a>
+
+<div id="result">
+
+</div>
+
+<script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+
+	$('#loader1').on('click', function() {
+		$( "#result" ).load( "testdata1.html", function() {
+			console.log("data loaded...", arguments);
+		} );
+	});
+
+	$('#loader2').on('click', function() {
+		$( "#result" ).load( "testdata1.html .list-data" );
+	});
+
+</script>
+
+</body>
+</html>
