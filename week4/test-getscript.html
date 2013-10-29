@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test of jquery getScript()</title>
+</head>
+<body>
+
+<div class="content">
+	Some intro text...
+</div>
+
+<a href="#" id="loader1">Load remote script</a>
+
+<div id="result">
+	<ul id="colors">
+	</ul>
+</div>
+
+<script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+
+	$('#loader1').on('click', function() {
+
+		$.getScript('testscript.js', function( data, textStatus, jqxhr ) {
+			console.log( "Load was performed." );
+			console.log( data ); // Data returned
+			console.log( textStatus ); // Success
+			console.log( jqxhr.status ); // 200
+		});
+		return false;
+	});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test of jquery get()</title>
+</head>
+<body>
+
+<div class="content">
+	Some intro text...
+</div>
+
+<a href="#" id="loader1">Load all data</a> 
+
+<div id="result">
+
+</div>
+
+<script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+
+	$('#loader1').on('click', function() {
+
+		$.ajax({
+			url: "testdata1.html",
+			data: {},
+			success:  function( data ) {
+				$( "#result" ).html( data );
+				console.log("data loaded...", arguments);
+			},
+			dataType: 'html'
+		});
+
+		return false;
+	});
+
+</script>
+
+</body>
+</html>
