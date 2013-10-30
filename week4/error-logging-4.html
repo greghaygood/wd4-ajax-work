@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test of error logging</title>
+
+</head>
+<body>
+
+<div class="content">
+	
+</div>
+
+<ul>
+	<li>
+		<a href="#" id="error1">#1: Output some console messages</a>
+	</li>
+	<li>
+		<a href="#" id="error2">#2: Use console timer</a>
+	</li>
+	<li>
+		<a href="#" id="error3">#3: Demo of breakpoints</a>
+	</li>
+</ul>
+
+<script type="text/javascript">
+
+document.getElementById('error1').addEventListener('click', function() {
+	
+	console.log("this is just a simple log message");
+	console.info("this is just a simple info message");
+	console.debug("this is just a simple debug message");
+	console.warn("this is just a simple warning message");
+	console.error("this is just a simple error message");
+
+});
+
+document.getElementById('error2').addEventListener('click', function() {
+
+	var myTimerKey = "my timer key"; // make sure this is unique for each timer!
+	console.log("running timer 1:");
+	console.time(myTimerKey);
+	var array= new Array(1000000);
+	for (var i = array.length - 1; i >= 0; i--) {
+		array[i] = new Object();
+	};
+	console.timeEnd(myTimerKey);
+
+	console.log("running timer 2:");
+	console.time(myTimerKey);
+	var array= new Array(1000000);
+	for (var i = 0; i < array.length; i++) {
+		array[i]
+	};
+	console.timeEnd(myTimerKey);
+
+
+});
+
+document.getElementById('error3').addEventListener('click', function() {
+
+	try {
+		blowUp();
+	} catch (error) {
+		//alert('caught error!' + error);
+		console.info('Caught an error but moving on...', error);
+		throw error;
+	}
+});
+
+
+</script>
+
+</body>
+</html>

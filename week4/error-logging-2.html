@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test of error logging</title>
+
+	<script type="text/javascript">
+		window.onerror = function(message, url, linenumber) {
+		  alert("JavaScript error: " + message + " on line " + linenumber + " for " + url);
+		}
+	</script>
+
+</head>
+<body>
+
+<div class="content">
+	
+</div>
+
+<a href="#" id="error1">#1: Trap error</a>
+
+<a href="#" id="error2">#2: Catch and throw error</a>
+
+<script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
+
+
+<script type="text/javascript">
+
+document.getElementById('error1').addEventListener('click', function() {
+	try {
+		blowUp();
+	} catch (error) {
+		//alert('caught error!' + error);
+		console.error(error);
+	}
+});
+
+document.getElementById('error2').addEventListener('click', function() {
+	try {
+		blowUp();
+	} catch (error) {
+		//alert('caught error!' + error);
+		console.info('Caught an error but moving on...', error);
+		throw error;
+	}
+});
+
+
+</script>
+
+</body>
+</html>
