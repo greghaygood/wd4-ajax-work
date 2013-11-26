@@ -16,7 +16,7 @@
         var ccLatlng = new google.maps.LatLng(33.813245, -84.362171);
         var mapOptions = {
           zoom: 20,
-          center: ccLatlng,
+          center: "Smyrna, GA",
           mapTypeId: google.maps.MapTypeId.SATELLITE
         }
         var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -24,7 +24,7 @@
         var overLayContent = document.getElementById('overlay-content').innerHTML;
 
         var infowindow = new google.maps.InfoWindow({
-          content: overLayContent
+          content: document.getElementById('overlay-content').innerHTML
         });
 
         var marker = new google.maps.Marker({

@@ -16,7 +16,7 @@
         var mapOptions = {
           zoom: 20,
           center: ccLatlng,
-          mapTypeId: google.maps.MapTypeId.SATELLITE
+          mapTypeId: google.maps.MapTypeId.HYBRID
         }
         var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
@@ -24,7 +24,7 @@
             position: ccLatlng,
             map: map,
             title: 'Hi, Circus Students!',
-            draggable:true,
+            draggable:false,
             animation: google.maps.Animation.DROP,
         });
       }
